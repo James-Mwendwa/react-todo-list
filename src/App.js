@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
-function App() {
+
+function App( {input, setInput, todos, setTodos} ) {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>Todo List {input} </h1>
       </header>
+
+      <TodoForm todos={todos} setTodos={setTodos} input={input} setInput= {setInput} />      
+      <TodoList />
     </div>
   );
 }
